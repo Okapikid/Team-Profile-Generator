@@ -1,0 +1,28 @@
+{
+  "name": " Team Profile Generator",
+  "version": "1.0.0",
+  "description": "Generates Team Profiles",
+  "main": "app.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Okapikid/Team-Profile-Generator"
+  },
+  "author": "Mike Augustine (Auggie)",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/Okapikid/Team-Profile-Generator/issues"
+  },
+  "homepage": "https://github.com/Okapikid/Team-Profile-Generator",
+  "dependencies": {
+    "inquirer": "^6.5.0",
+    "jest": "^28.1"
+  }
+}
