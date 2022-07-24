@@ -2,7 +2,7 @@
   "name": " Team Profile Generator",
   "version": "1.0.0",
   "description": "Generates Team Profiles",
-  "main": "app.js",
+  "main": "index.js",
   "directories": {
     "lib": "lib",
     "test": "test"
