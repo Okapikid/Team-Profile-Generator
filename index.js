@@ -119,7 +119,7 @@ function writeFile(fileName, data) {
 }
 
 function begin() {
-  createTeam();
+  addManager();
 }
 
 begin();
