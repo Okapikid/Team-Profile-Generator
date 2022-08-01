@@ -62,7 +62,7 @@ describe("Employee", () => {
     it("should return the default role of Employee through the getTitle method", () => {
       const obj = new Employee("Auggie", 1, "auggie@email.com");
       // SET EXPECTATION
-      expect(obj.getTitle()).toEqual("employee");
+      expect(obj.getTitle()).toEqual("Employee");
     });
   });
 });
