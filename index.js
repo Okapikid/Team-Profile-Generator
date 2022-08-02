@@ -1,14 +1,16 @@
 // REQUIRE INQUIRER AND FS
 const inquirer = require("inquirer");
 const fs = require("fs");
-
+const path = require("path");
 // EMPLOYEES
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 
+// CREATE EMPTY EMPLOYEE ARRAY
 const employeeArray = [];
 
+// INQUIRER PROMPTS
 function addManager() {
   inquirer
     .prompt([
@@ -114,19 +116,47 @@ function createTeam() {
     });
 }
 
-function writeFile(fileName, data) {
-  return fs.writeFileSync(path.join(process.cwd(), fileName), data);
-}
-
 function begin() {
   addManager();
 }
 
+function generateEmployeeCard(employee) {
+  switch (employee.getTitle()) {
+    case "Engineer":
+      return `
+      <div class="card">
+        <div class="text-white" style="background-color: #0000ff;>
+          <h4 class="card-title">${employee.name}</h4>
+          <h4 class="card-text">Engineer</h4>
+        </div>
+        <ul class="list-group">
+          <li class="list-group-item">ID: ${employee.id}</li>
+          <li class="list-group-item"><a href:"mailto: ${employee.email}" target="_blank">Email: ${employee.email}</a></li>
+          <li class="list-group-item">Github: ${employee.github}</li>
+        </ul>
+      </div>`;
+
+    case "Intern":
+      return `
+      <div class="card">
+        <div class="text-white" style="background-color: #0000ff;>
+          <h4 class="card-title">${employee.name}</h4>
+          <h4 class="card-text">Intern</h4>
+        </div>
+        <ul class="list-group">
+          <li class="list-group-item">ID: ${employee.id}</li>
+          <li class="list-group-item"><a href:"mailto: ${employee.email}" target="_blank">Email: ${employee.email}</a></li>
+          <li class="list-group-item">School: ${employee.school}</li>
+        </ul>
+      </div>`;
+  }
+}
+
 function generateEmployees() {
   if (employeeArray.length > 1) {
-    let employeeCards = generateEmployees[1];
+    let employeeCards = generateEmployeeCard(employeeArray[1]);
     for (let i = 2; i < employeeArray; i++) {
-      employeeCards += generateEmployees(employeeArray[1]);
+      employeeCards += generateEmployeeCard(employeeArray[1]);
     }
     return employeeCards;
   } else {
@@ -163,7 +193,7 @@ function generateHTML() {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href = 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css' rel='stylesheet'>
-    <title>Team Profule</title>
+    <title>Team Profile</title>
   </head>
   <body>
     <div class="jumbotron-fluid text=white" style="background-color: #ff0000">
