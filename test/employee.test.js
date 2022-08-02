@@ -17,7 +17,7 @@ describe("Employee", () => {
     it("should accept inputs for name, id, and email, and test for the return of the correct id", () => {
       const obj = new Employee("Auggie", 1, "auggie@email.com");
       // SET EXPECTATION
-      expect(obj.id).toEqual("1");
+      expect(obj.id).toEqual(1);
     });
   });
 
@@ -44,7 +44,7 @@ describe("Employee", () => {
     it("should return the correct id through the getId method", () => {
       const obj = new Employee("Auggie", 1, "auggie@email.com");
       // SET EXPECTATION
-      expect(obj.getId()).toEqual("1");
+      expect(obj.getId()).toEqual(1);
     });
   });
 
@@ -59,7 +59,7 @@ describe("Employee", () => {
 
   // TEST FOR GETTITLE
   describe("getTitleTest", () => {
-    it("should return the default role of Employee through the getTitle method", () => {
+    it("should return the default title of Employee through the getTitle method", () => {
       const obj = new Employee("Auggie", 1, "auggie@email.com");
       // SET EXPECTATION
       expect(obj.getTitle()).toEqual("Employee");

@@ -27,7 +27,7 @@ describe("Intern", () => {
         "School University"
       );
       // SET EXPECTATION
-      expect(obj.id).toEqual("1");
+      expect(obj.id).toEqual(1);
     });
   });
 
@@ -45,9 +45,9 @@ describe("Intern", () => {
     });
   });
 
-  // TEST FOR OFFICE
-  describe("officeTest", () => {
-    it("should accept inputs for name, id, and email, and test for the return of the correct office number", () => {
+  // TEST FOR SCHOOL
+  describe("schoolTest", () => {
+    it("should accept inputs for name, id, and email, and test for the return of the correct school name", () => {
       const obj = new Intern(
         "Auggie",
         1,
@@ -55,7 +55,7 @@ describe("Intern", () => {
         "School University"
       );
       // SET EXPECTATION
-      expect(obj.office).toEqual("School University");
+      expect(obj.school).toEqual("School University");
     });
   });
 
@@ -83,7 +83,7 @@ describe("Intern", () => {
         "School University"
       );
       // SET EXPECTATION
-      expect(obj.getId()).toEqual("1");
+      expect(obj.getId()).toEqual(1);
     });
   });
 
@@ -103,7 +103,7 @@ describe("Intern", () => {
 
   // TEST FOR GETSCHOOL
   describe("getSchoolTest", () => {
-    it("should return the correct office number username through the getSchool method", () => {
+    it("should return the correct school name through the getSchool method", () => {
       const obj = new Intern(
         "Auggie",
         1,
@@ -117,7 +117,7 @@ describe("Intern", () => {
 
   // TEST FOR GETTITLE
   describe("getTitleTest", () => {
-    it("should return the default role of Intern through the getTitle method", () => {
+    it("should return the default title of Intern through the getTitle method", () => {
       const obj = new Intern(
         "Auggie",
         1,
