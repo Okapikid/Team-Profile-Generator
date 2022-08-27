@@ -42,7 +42,7 @@ function addManager() {
         managerAnswers.managerEmail,
         managerAnswers.managerOffice
       );
-      employeeArray.push(newManager);
+      employeeArray.unshift(newManager);
       createTeam();
     });
 }
@@ -125,13 +125,13 @@ function generateEmployeeCard(employee) {
     case "Engineer":
       return `
       <div class="card">
-        <div class="text-white" style="background-color: #0000ff;>
+        <div class="text-white" style="background-color: #0000ff">
           <h4 class="card-title">${employee.name}</h4>
           <h4 class="card-text">Engineer</h4>
         </div>
         <ul class="list-group">
           <li class="list-group-item">ID: ${employee.id}</li>
-          <li class="list-group-item"><a href:"mailto: ${employee.email}" target="_blank">Email: ${employee.email}</a></li>
+          <li class="list-group-item"><a href="mailto: ${employee.email}" target="_blank">Email: ${employee.email}</a></li>
           <li class="list-group-item">Github: ${employee.github}</li>
         </ul>
       </div>`;
@@ -139,13 +139,13 @@ function generateEmployeeCard(employee) {
     case "Intern":
       return `
       <div class="card">
-        <div class="text-white" style="background-color: #0000ff;>
+        <div class="text-white" style="background-color: #0000ff">
           <h4 class="card-title">${employee.name}</h4>
           <h4 class="card-text">Intern</h4>
         </div>
         <ul class="list-group">
           <li class="list-group-item">ID: ${employee.id}</li>
-          <li class="list-group-item"><a href:"mailto: ${employee.email}" target="_blank">Email: ${employee.email}</a></li>
+          <li class="list-group-item"><a href="mailto: ${employee.email}" target="_blank">Email: ${employee.email}</a></li>
           <li class="list-group-item">School: ${employee.school}</li>
         </ul>
       </div>`;
@@ -168,15 +168,15 @@ function generateCards() {
   return `
   <div class="card">
     <div class="text-white" style="background-color: #0000ff">
-      <h4 class="card-title">${employeeArray[0].managerName}</h4>
-      <h4 class="card-text>Manager</h4>  
+      <h4 class="card-title">${employeeArray[0].name}</h4>
+      <h4 class="card-text">Manager</h4>  
     </div>  
     <ul class="list-group">
-      <li class="list-group-item>ID: ${employeeArray[0].managerId}</li>
-      <li class="list-group-item>Email: ${employeeArray[0].managerEmail}</li>
-      <li class="list-group-item>Office number: ${
-        employeeArray[0].managerOffice
-      }</li>
+      <li class="list-group-item">ID: ${employeeArray[0].id}</li>
+      <li class="list-group-item"><a href="mailto: ${
+        employeeArray[0].email
+      }" target="_blank">Email: ${employeeArray[0].email}</a></li>
+      <li class="list-group-item">Office number: ${employeeArray[0].office}</li>
     </ul>
   </div>
 
